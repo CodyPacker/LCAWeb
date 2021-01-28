@@ -1,0 +1,8 @@
+ul.a {
+  list-style-position: inside;
+}
+p {
+  color: red;
+  text-indent: 30px;
+  text-transform: uppercase;
+}
