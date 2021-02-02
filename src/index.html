@@ -8,6 +8,15 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <script>
+	function sssds(id, increaseFactor){
+		 txt = document.getElementById('ppp');
+		 style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+		 console.log(style);
+		 currentSize = parseFloat(style);
+		 txt.style.fontSize = (currentSize + increaseFactor) + 'px';
+	}
+  </script>
   <app-root></app-root>
 </body>
 </html>
