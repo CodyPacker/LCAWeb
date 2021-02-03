@@ -9,14 +9,29 @@
 </head>
 <body>
   <script>
-	function sssds(id, increaseFactor){
-		 txt = document.getElementById('ppp');
+  //Change font size with id "text"
+	function changeFontSize(id, increaseFactor){
+		 txt = document.getElementById('text');
 		 style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
-		 console.log(style);
 		 currentSize = parseFloat(style);
-		 txt.style.fontSize = (currentSize + increaseFactor) + 'px';
+		 txt.style.fontSize = increaseFactor+'%';
+		 //txt.style.fontSize = (currentSize + increaseFactor) + 'px';
 	}
-  </script>
+  //Change color set (colorblind)
+  	function changeColorSet(){
+		var checkBox = document.getElementById("myCheck");
+		if (checkBox.checked == true){
+			document.body.style.backgroundColor = "red";
+			txt = document.getElementById('text');
+				txt.style.color="blue";
+		} else {
+			document.body.style.backgroundColor = "";
+			txt = document.getElementById('text');
+				txt.style.color="";
+		}
+	}
+</script>
   <app-root></app-root>
 </body>
 </html>
+
