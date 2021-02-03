@@ -17,8 +17,11 @@
 <router-outlet></router-outlet>
 
 <!-- Change font size via button !-->
-<input type="button" value="Increase" onclick="sssds('h1', 1)">
-<input type="button" value="Decrease" onclick="sssds('h1', -1)">
+<input type="button" value="Small" onclick="changeFontSize('text', 75)">
+<input type="button" value="Medium" onclick="changeFontSize('text', 100)">
+<input type="button" value="Large" onclick="changeFontSize('text', 150)">
+<input type="checkbox" id="myCheck" value="Colors" onclick="changeColorSet()">
+
 
 <div class="footer">
   <a href="https://www.instagram.com/valpolambdachi/" target="_blank"> <img src="https://love2dev.com/img/2000px-instagram_logo_2016svg-2000x2000.png" alt="Instagram" style="width:42px;height:42px;"></a>
