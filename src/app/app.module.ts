@@ -13,6 +13,11 @@ import { InterestComponent } from './interest/interest.component';
 import { PhilanthropyComponent } from './philanthropy/philanthropy.component';
 import { BrothersComponent } from './brothers/brothers.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +44,8 @@ import { BrothersComponent } from './brothers/brothers.component';
 	{path: 'philanthropy', component: PhilanthropyComponent},
 	{path: 'brothers', component: BrothersComponent}
   ]),
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFireDatabaseModule
 ],
   providers: [],
   bootstrap: [AppComponent]
