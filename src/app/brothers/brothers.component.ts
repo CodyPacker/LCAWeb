@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+
 
 @Component({
   selector: 'app-brothers',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrothersComponent implements OnInit {
 
-  constructor() { }
+  brothers: any[] = [];
+
+  constructor(db: AngularFireDatabase) { 
+    db.list('/brothers').valueChanges()
+      .subscribe(brothers => {
+        this.brothers = brothers;
+        console.log(this.brothers)
+      })
+  }
 
   ngOnInit(): void {
   }
