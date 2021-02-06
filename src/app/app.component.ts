@@ -15,6 +15,8 @@ import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 export class AppComponent {
   constructor() { }
 
+  title = 'LCAValpo';
+
   calendarOptions: CalendarOptions = {
 	// Single Calendar
 	googleCalendarApiKey: '',
@@ -33,4 +35,4 @@ export class AppComponent {
 	
 	
   };
-}
+}   
