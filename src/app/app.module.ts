@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+//Calendar Stuff
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+
 import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +33,7 @@ import { BrothersComponent } from './brothers/brothers.component';
   ],
   imports: [
   BrowserModule,
+  FullCalendarModule,
   RouterModule.forRoot([
     {path: 'home', component: HomeComponent},
     {path: 'about-us', component: AboutUsComponent},
