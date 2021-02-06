@@ -17,14 +17,14 @@ export class AppComponent {
 
   calendarOptions: CalendarOptions = {
 	// Single Calendar
-	googleCalendarApiKey: 'AIzaSyCIWGThOyEaig6djSsFNzst5MBNxaZ2uZo',
+	googleCalendarApiKey: '',
 	plugins: [ googleCalendarPlugin, dayGridPlugin, timeGridPlugin, listGridPlugin ],
 	initialView: 'listWeek',
 	height: '400px',
 	aspectRatio: 0.5,
 	
 	events: {
-		googleCalendarId: 'valpo.edu_74pu6lua5p2dvs6nlahmfp233k@group.calendar.google.com',
+		googleCalendarId: '',
 		color: 'purple',   // an option!
 		textColor: '#ffffff', // an option!
 		
