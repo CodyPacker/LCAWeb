@@ -9,14 +9,14 @@
 </head>
 <body>
   <script>
-  //Change font size with id "text"
+  //Change font size with id "ppp"
 	function changeFontSize(id, increaseFactor){
-		 txt = document.getElementById('text');
-		 style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
-		 currentSize = parseFloat(style);
-		 txt.style.fontSize = increaseFactor+'%';
-		 //txt.style.fontSize = (currentSize + increaseFactor) + 'px';
+		txt = document.getElementsByTagName("P");
+		for (i=0; i < txt.length; i++){
+			txt[i].style.fontSize = increaseFactor+'%';	
+		}
 	}
+		
   //Change color set (colorblind)
   	function changeColorSet(){
 		var checkBox = document.getElementById("myCheck");
@@ -33,5 +33,6 @@
 </script>
   <app-root></app-root>
 </body>
+
 </html>
 
