@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogService.getAll()
-    .subscribe(b => {
-      this.blogposts = b;
+    .subscribe(blogpost => {
+      this.blogposts = blogpost;
     });
     console.log(this.blogposts)
   }
