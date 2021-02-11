@@ -1,6 +1,12 @@
 <fieldset>
 	<legend>
 		<button type="button" class="add"> Add </button>
+		<label>
+			Input
+			<input type = "text" [formControl] = 'text' />
+		</label>
+	
+		<p>{{ text.value }}</p>
 	</legend>
 </fieldset>
 
