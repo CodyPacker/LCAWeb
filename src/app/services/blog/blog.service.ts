@@ -12,12 +12,14 @@ export class BlogService {
 
   blogpostRef: AngularFireList<Blogpost>;
 
+  blogposts: any[] = [];
+
   constructor(private db: AngularFireDatabase) {
     this.blogpostRef = db.list(this.dbpath);
    }
 
-   getAll(): AngularFireList<Blogpost> {
-     return this.blogpostRef;
+   getAll() {
+    return this.db.list(this.dbpath).valueChanges()
    }
 
    create(blogpost: Blogpost) {

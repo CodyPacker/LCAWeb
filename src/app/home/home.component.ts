@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AngularFireList } from '@angular/fire/database';
 import Blogpost from '../models/blogpost';
 import { BlogService } from '../services/blog/blog.service';
 
@@ -12,9 +12,16 @@ export class HomeComponent implements OnInit {
 
   blogpost: Blogpost = new Blogpost();
 
+  blogposts: any[] = [];
+
   constructor(private blogService: BlogService){}
 
   ngOnInit(): void {
+    this.blogService.getAll()
+    .subscribe(b => {
+      this.blogposts = b;
+    });
+    console.log(this.blogposts)
   }
 
   saveBlogpost(): void {
@@ -23,8 +30,5 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  newBlogpost(): void {
-    this.blogpost = new Blogpost();
-  }
 
 }

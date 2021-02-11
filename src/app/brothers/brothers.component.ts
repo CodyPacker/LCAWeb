@@ -11,15 +11,15 @@ export class BrothersComponent implements OnInit {
 
   brothers: any[] = [];
 
-  constructor(db: AngularFireDatabase) { 
-    db.list('/brothers').valueChanges()
+  constructor(private db: AngularFireDatabase) { 
+  }
+
+  ngOnInit(): void {
+    this.db.list('/brothers').valueChanges()
       .subscribe(brothers => {
         this.brothers = brothers;
         console.log(this.brothers)
       })
-  }
-
-  ngOnInit(): void {
   }
 
 }

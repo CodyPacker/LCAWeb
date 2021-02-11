@@ -26,6 +26,12 @@
 		/>
 		<button (click) = "saveBlogpost()">Submit</button>
 	</div>
+
+	<ul>
+		<li *ngFor = "let blogpost of blogposts">
+			{{ blogpost  }}
+		</li>
+	</ul>
 </fieldset>
 
 <fieldset>
