@@ -12,7 +12,7 @@ import { ScholarshipComponent } from './scholarship/scholarship.component';
 import { InterestComponent } from './interest/interest.component';
 import { PhilanthropyComponent } from './philanthropy/philanthropy.component';
 import { BrothersComponent } from './brothers/brothers.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -35,7 +35,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
   BrowserModule,
-  ReactiveFormsModule,
+  FormsModule,
   RouterModule.forRoot([
     {path: 'home', component: HomeComponent},
     {path: 'about-us', component: AboutUsComponent},

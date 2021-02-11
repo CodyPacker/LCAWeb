@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { AngularFireDatabase } from '@angular/fire/database';
+import Blogpost from '../models/blogpost';
+import { BlogService } from '../services/blog/blog.service';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +10,21 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class HomeComponent implements OnInit {
 
-  text = new FormControl('');
-  blogposts: any[] = [];
+  blogpost: Blogpost = new Blogpost();
 
-  constructor(db:AngularFireDatabase) { 
-    db.list('/blogpost').valueChanges()
-      .subscribe(blogposts => {
-        this.blogposts = blogposts;
-        console.log(this.blogposts)
-      })
-  }
+  constructor(private blogService: BlogService){}
 
   ngOnInit(): void {
   }
 
-  submitPost() {
-    
+  saveBlogpost(): void {
+    this.blogService.create(this.blogpost).then(() => {
+      console.log("new blog post created successfully");
+    });
+  }
+
+  newBlogpost(): void {
+    this.blogpost = new Blogpost();
   }
 
 }
