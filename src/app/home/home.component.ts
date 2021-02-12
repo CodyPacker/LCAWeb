@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireList } from '@angular/fire/database';
 import Blogpost from '../models/blogpost';
 import { BlogService } from '../services/blog/blog.service';
 

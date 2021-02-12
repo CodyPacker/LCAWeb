@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import Brother from '../models/brother';
+import { BrothersService } from '../services/brothers/brothers.service';
 
 
 @Component({
@@ -9,17 +10,24 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class BrothersComponent implements OnInit {
 
+  brother: Brother = new Brother();
+
   brothers: any[] = [];
 
-  constructor(private db: AngularFireDatabase) { 
-  }
+  constructor(private brotherService: BrothersService) {}
 
   ngOnInit(): void {
-    this.db.list('/brothers').valueChanges()
+    this.brotherService.getAll()
       .subscribe(brothers => {
         this.brothers = brothers;
         console.log(this.brothers)
-      })
+      });
+  }
+
+  saveBrother(): void {
+    this.brotherService.create(this.brother).then(() => {
+      console.log("new brother successfully created")
+    });
   }
 
 }
