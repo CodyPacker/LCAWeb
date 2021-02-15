@@ -17,6 +17,13 @@ import { ScholarshipComponent } from './scholarship/scholarship.component';
 import { InterestComponent } from './interest/interest.component';
 import { PhilanthropyComponent } from './philanthropy/philanthropy.component';
 import { BrothersComponent } from './brothers/brothers.component';
+import { FormsModule } from '@angular/forms';
+
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -34,17 +41,20 @@ import { BrothersComponent } from './brothers/brothers.component';
   imports: [
   BrowserModule,
   FullCalendarModule,
+  FormsModule,
   RouterModule.forRoot([
     {path: 'home', component: HomeComponent},
     {path: 'about-us', component: AboutUsComponent},
-	{path: 'gallery', component: GalleryComponent},
-	{path: 'newsletter', component: NewsletterComponent},
-	{path: 'donations', component: DonationsComponent},
-	{path: 'scholarship', component: ScholarshipComponent},
-	{path: 'interest', component: InterestComponent},
-	{path: 'philanthropy', component: PhilanthropyComponent},
-	{path: 'brothers', component: BrothersComponent}
+	  {path: 'gallery', component: GalleryComponent},
+	  {path: 'newsletter', component: NewsletterComponent},
+	  {path: 'donations', component: DonationsComponent},
+	  {path: 'scholarship', component: ScholarshipComponent},
+	  {path: 'interest', component: InterestComponent},
+	  {path: 'philanthropy', component: PhilanthropyComponent},
+	  {path: 'brothers', component: BrothersComponent}
   ]),
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFireDatabaseModule
 ],
   providers: [],
   bootstrap: [AppComponent]
