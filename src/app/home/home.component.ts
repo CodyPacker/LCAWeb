@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Blogpost from '../models/blogpost';
 import { BlogService } from '../services/blog/blog.service';
+import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'app-home',
@@ -13,18 +14,20 @@ export class HomeComponent implements OnInit {
 
   blogposts: any[] = [];
 
-  constructor(private blogService: BlogService){}
+  constructor(private dataService: DataService){
+    this.dataService.setDbPath("/brothers");
+  }
 
   ngOnInit(): void {
-    this.blogService.getAll()
+    this.dataService.getAll()
     .subscribe(blogpost => {
       this.blogposts = blogpost;
     });
-    console.log(this.blogposts)
+    console.log("nice" + this.blogposts)
   }
 
   saveBlogpost(): void {
-    this.blogService.create(this.blogpost).then(() => {
+    this.dataService.create(this.blogpost).then(() => {
       console.log("new blog post created successfully");
     });
   }
