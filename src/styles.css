@@ -1,6 +1,47 @@
-p {
-	font-size: 100px;
-}
 html{
-	background-color: gray;
+	background-color: #093D20
+}
+li{
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: right;
+}
+li.Title{
+	float:left;
+	padding-left: 10px;
+	font-size: 75px;
+}
+
+li a {
+	color:  #FFB71D;
+	text-decoration: none;
+}
+li a.button:hover {
+	text-decoration: underline;
+}
+li a.button {
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 1px solid #FFB71D;
+	font-size: 25px;
+}
+li a.last:hover{
+	text-decoration: underline;
+
+}
+li a.last{
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 25px;
+	
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2E1A4B;
+  
+  
 }

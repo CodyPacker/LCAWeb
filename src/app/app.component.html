@@ -1,6 +1,8 @@
 <head>
 	<title>Page Title</title>
+	<div class = "calendar">
 	<script src='../fullcalendar/core/main.js'></script>
+	</div>
 	</head>
 
 	<!--  Full Calendar npm installations
@@ -16,18 +18,18 @@
 	
 	
 	<body>
-	<h1>LCA WebPage</h1>
 	<nav>
-		<ul class = "a">
-			<li><a class="button" routerLink="/home">Home</a></li>
+		<ul>
+			<li class = Title><a>AXA - ΙΣ</a></li>
+			<li><a class="button" class = "last" routerLink="/brothers">Brothers</a></li>
+			<li><a class="button" routerLink="/philanthropy">Philanthropy</a></li>
+			<li><a class="button" routerLink="/interest">Interested</a></li>
+			<li><a class="button" routerLink="/scholarship">Scholarship</a></li>
 			<li><a class="button" routerLink="/about-us">About Us</a></li>
 			<li><a class="button" routerLink="/gallery">Gallery</a></li>
 			<li><a class="button" routerLink="/newsletter">Newsletter</a></li>
 			<li><a class="button" routerLink="/donations">Donations</a></li>
-			<li><a class="button" routerLink="/scholarship">Scholarship</a></li>
-			<li><a class="button" routerLink="/interest">Interested</a></li>
-			<li><a class="button" routerLink="/philanthropy">Philanthropy</a></li>
-			<li><a class="button" routerLink="/brothers">Brothers</a></li>
+			<li><a class="button" routerLink="/home">Home</a></li>
 		</ul>
 	</nav>
 	
@@ -39,7 +41,9 @@
 	<br> -->
 	
 	<!-- Router-outlit is the view (each view has its own html in the app folder) !-->
+	<div class="pageContent">
 	<router-outlet></router-outlet>
+	</div>
 	
 	<!-- Change font size via button !-->
 	<input type="button" value="Small" onclick="changeFontSize('text', 75)">
